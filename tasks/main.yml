@@ -1,0 +1,13 @@
+---
+# example for update only glibc
+##  - name: Update to latest state 
+##    yum: name={{ item }} state=latest
+##    with_items:
+##     - glibc
+
+# upgrade all packages
+  - name: upgrade all packages
+    yum: name=* state=latest
+    notify:
+           - Restart server
+           - Wait for server to restart
